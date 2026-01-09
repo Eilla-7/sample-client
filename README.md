@@ -1,0 +1,1 @@
+This is repo represents client in go.
