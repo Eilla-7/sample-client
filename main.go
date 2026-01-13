@@ -9,11 +9,21 @@ import (
 )
 
 func main() {
+
+	var username, password string
+
 	apiUrl := "http://localhost:8080"
 
+	fmt.Println("Welcome to our app")
+	fmt.Println("Login")
+	fmt.Println("username: ")
+	fmt.Scanln(&username)
+	fmt.Println("password: ")
+	fmt.Scanln(&password)
+
 	loginData, _ := json.Marshal(map[string]string{
-		"username": " ",
-		"password": " ",
+		"username": username,
+		"password": password,
 	})
 
 	resp, err := http.Post(apiUrl+"/auth", "application/json", bytes.NewBuffer(loginData))
